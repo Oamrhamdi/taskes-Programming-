@@ -1,292 +1,1142 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>دليل التخصصات التقنية</title>
+  <title>كن مطور محترف في تخصصات التكنولوجيا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--text:#e6eef6}
-    body{font-family: 'Cairo', sans-serif;margin:0;background:linear-gradient(180deg,#071127 0%, #031025 100%);color:var(--text);}
-    header{padding:28px 20px;text-align:center}
-    h1{margin:0;font-size:28px}
-    .container{max-width:980px;margin:18px auto;padding:16px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-    .card{background:rgba(255,255,255,0.03);border-radius:12px;padding:14px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
-    h2{font-size:18px;margin:0 0 8px}
-    p.small{color:var(--muted);margin:6px 0 12px;font-size:13px}
-    ul{margin:8px 0 0 0;padding:0 14px}
-    li{margin:6px 0;line-height:1.5}
-    details{background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);padding:10px;border-radius:8px}
-    summary{cursor:pointer;font-weight:700}
-    code{background:rgba(255,255,255,0.03);padding:2px 6px;border-radius:6px;color:var(--accent)}
-    .footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .btn{padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);cursor:pointer}
-    @media (max-width:520px){h1{font-size:20px}}
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #06b6d4;
+      --accent-dark: #0891b2;
+      --muted: #94a3b8;
+      --text: #e6eef6;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background: linear-gradient(180deg, #071127 0%, #031025 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    
+    /* خلفية خشبية متحركة */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        linear-gradient(rgba(139, 69, 19, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4a76a" x="0" y="0" width="100" height="100"/></svg>');
+      background-size: 20px 20px, 20px 20px, auto;
+      z-index: -1;
+      animation: woodMove 20s infinite linear;
+      opacity: 0.1;
+    }
+    
+    @keyframes woodMove {
+      0% {
+        background-position: 0 0, 0 0, 0 0;
+      }
+      100% {
+        background-position: 20px 20px, 20px 20px, 0 0;
+      }
+    }
+    
+    /* الشريط العلوي المعدل */
+    .navbar {
+      background: rgba(139, 69, 19, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #d4a76a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-shadow: 0 0 10px rgba(212, 167, 106, 0.5);
+    }
+    
+    /* الصفحة الرئيسية */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(120deg, rgba(139, 69, 19, 0.15), transparent);
+      position: relative;
+    }
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 30%, rgba(15, 23, 36, 0.9) 70%);
+      z-index: -1;
+    }
+    
+    .hero-title {
+      font-size: 42px;
+      margin-bottom: 16px;
+      text-shadow: 0 0 15px rgba(212, 167, 106, 0.4);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .hero-title span:nth-child(1) { color: #ff6b6b; }
+    .hero-title span:nth-child(2) { color: #4ecdc4; }
+    .hero-title span:nth-child(3) { color: #ffd166; }
+    .hero-title span:nth-child(4) { color: #06d6a0; }
+    .hero-title span:nth-child(5) { color: #118ab2; }
+    .hero-title span:nth-child(6) { color: #073b4c; }
+    
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+    
+    .quoct {
+      text-align: center;
+      font-size: 20px;
+      color: #d4a76a;
+      margin-top: -20px;
+      margin-bottom: 40px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      flex: 1;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    /* تصميم بطاقة التواصل مع المطور */
+    .developer-card {
+      margin: 0 auto;
+      background: transparent;
+      box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+      position: relative;
+      width: 280px;
+      height: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .developer-wave {
+      position: absolute;
+      width: 540px;
+      height: 700px;
+      opacity: 0.6;
+      left: 0;
+      top: 0;
+      margin-left: -50%;
+      margin-top: -70%;
+      background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
+    }
+    
+    .developer-wave:nth-child(2),
+    .developer-wave:nth-child(3) {
+      top: 210px;
+    }
+    
+    .developer-card .developer-wave {
+      border-radius: 40%;
+      animation: wave 55s infinite linear;
+    }
+    
+    .developer-card:hover .developer-wave {
+      animation: wave 3000ms infinite linear;
+    }
+    
+    .developer-card:hover .developer-wave:nth-child(2) {
+      animation-duration: 4000ms;
+    }
+    
+    .developer-card:hover .developer-wave:nth-child(3) {
+      animation-duration: 5000ms;
+    }
+    
+    @keyframes wave {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .developer-info {
+      text-align: center;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(255, 255, 255);
+      font-weight: 600;
+      width: 100%;
+      padding: 20px;
+      z-index: 2;
+    }
+    
+    .developer-icon {
+      width: 3em;
+      margin-bottom: 1em;
+    }
+    
+    .developer-name {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    
+    .developer-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .developer-link {
+      color: white;
+      font-size: 24px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.1);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+    }
+    
+    .developer-link:hover {
+      transform: translateY(-5px) scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* تصميم الدوائر المتخصصة */
+    .specialty-circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: var(--transition);
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(139, 69, 19, 0.05);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(184, 134, 11, 0.2);
+    }
+    
+    .specialty-circle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 30%, rgba(15, 23, 36, 0.9) 90%);
+      z-index: -1;
+    }
+    
+    .specialty-circle:hover {
+      transform: translateY(-10px);
+      background: rgba(139, 69, 19, 0.1);
+      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+    }
+    
+    .circle-loader {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      border: 4px solid #8b4513;
+      overflow: hidden;
+      border-radius: 50%;
+      box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
+        10px 10px 10px rgba(0, 0, 0, 0.4),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+        inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .specialty-circle:hover .circle-loader {
+      transform: scale(1.05) rotate(5deg);
+    }
+    
+    .circle-loader:before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+      z-index: 10;
+      background: #212121;
+      border-radius: 50%;
+      border: 2px solid #8b4513;
+      box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+        inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #d4a76a;
+      transition: var(--transition);
+    }
+    
+    .circle-loader span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      z-index: -1;
+      animation: animate 0.5s linear infinite;
+    }
+    
+    /* ألوان مختلفة لكل دائرة */
+    .web-dev span { background-image: linear-gradient(-225deg, #ff7402 0%, #ffe700 50%, #fff55e 100%); }
+    .game-dev span { background-image: linear-gradient(-225deg, #ff2cdf 0%, #7b2ff7 50%, #2f86f7 100%); }
+    .app-dev span { background-image: linear-gradient(-225deg, #2ff7a7 0%, #2ff7f2 50%, #2f9ef7 100%); }
+    .cyber-security span { background-image: linear-gradient(-225deg, #f72f2f 0%, #f78d2f 50%, #f7e12f 100%); }
+    .computer-science span { background-image: linear-gradient(-225deg, #2f86f7 0%, #2f48f7 50%, #892ff7 100%); }
+    .information-systems span { background-image: linear-gradient(-225deg, #f72fc1 0%, #f72f6d 50%, #f7582f 100%); }
+    .ai span { background-image: linear-gradient(-225deg, #2ff7a7 0%, #2ff7f2 50%, #2f9ef7 100%); }
+    .data-science span { background-image: linear-gradient(-225deg, #f7e12f 0%, #f7b12f 50%, #f7722f 100%); }
+    .computer-engineering span { background-image: linear-gradient(-225deg, #2ff772 0%, #2ff7a7 50%, #2ff7e1 100%); }
+    .network-security span { background-image: linear-gradient(-225deg, #f72f2f 0%, #f72f8d 50%, #f72fe1 100%); }
+    .information-security span { background-image: linear-gradient(-225deg, #2f48f7 0%, #2f86f7 50%, #2fcbf7 100%); }
+    
+    /* رموز لكل دائرة */
+    .web-dev:before { content: "\f121"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .game-dev:before { content: "\f11b"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .app-dev:before { content: "\f3cd"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .cyber-security:before { content: "\f21d"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .computer-science:before { content: "\f109"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .information-systems:before { content: "\f0e8"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .ai:before { content: "\f544"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .data-science:before { content: "\f200"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .computer-engineering:before { content: "\f6e4"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .network-security:before { content: "\f6ff"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    .information-security:before { content: "\f505"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+    
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    /* تصميم الأزرار الجميلة */
+    .specialty-button {
+      --glow-color: rgb(212, 167, 106);
+      --glow-spread-color: rgba(184, 134, 11, 0.781);
+      --enhanced-glow-color: rgb(231, 206, 255);
+      --btn-color: rgb(100, 61, 136);
+      border: .25em solid var(--glow-color);
+      padding: 0.7em 2em;
+      color: var(--glow-color);
+      font-size: 16px;
+      font-weight: bold;
+      background-color: rgba(139, 69, 19, 0.3);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+      text-shadow: 0 0 .5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    
+    .specialty-button::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: .7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+    }
+    
+    .specialty-button:hover {
+      color: rgba(139, 69, 19, 1);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 2em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+    }
+    
+    .specialty-button:active {
+      box-shadow: 0 0 0.6em .25em var(--glow-color),
+              0 0 2.5em 2em var(--glow-spread-color),
+              inset 0 0 .5em .25em var(--glow-color);
+    }
+    
+    /* صفحة التخصص */
+    .specialization-header {
+      padding: 40px 20px;
+      text-align: center;
+      background: linear-gradient(120deg, rgba(139, 69, 19, 0.15), transparent);
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .specialization-header h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #d4a76a, #f8d568);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #d4a76a;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: var(--transition);
+      border: 1px solid #d4a76a;
+    }
+    
+    .back-btn:hover {
+      background: rgba(212, 167, 106, 0.1);
+      transform: translateX(-5px);
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .content-card {
+      background: rgba(139, 69, 19, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(139, 69, 19, 0.2);
+      border: 1px solid rgba(184, 134, 11, 0.2);
+      transition: var(--transition);
+    }
+    
+    .content-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(139, 69, 19, 0.3);
+    }
+    
+    /* تصميم أزرار المهارات الأساسية والمجالات */
+    .section-button {
+      --border-radius: 15px;
+      --border-width: 4px;
+      appearance: none;
+      position: relative;
+      padding: 1em 2em;
+      border: 0;
+      background-color: #212121;
+      font-family: "Cairo", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      z-index: 2;
+      width: 100%;
+      margin-bottom: 20px;
+      cursor: pointer;
+      border-radius: var(--border-radius);
+    }
+    
+    .section-button::after {
+      --m-i: linear-gradient(#000, #000);
+      --m-o: content-box, padding-box;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: var(--border-width);
+      border-radius: var(--border-radius);
+      background-image: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+      );
+      -webkit-mask-image: var(--m-i), var(--m-i);
+      mask-image: var(--m-i), var(--m-i);
+      -webkit-mask-origin: var(--m-o);
+      mask-origin: var(--m-o);
+      -webkit-mask-clip: var(--m-o);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+      filter: hue-rotate(0);
+      animation: rotate-hue linear 500ms infinite;
+      animation-play-state: paused;
+    }
+    
+    .section-button:hover::after {
+      animation-play-state: running;
+    }
+    
+    @keyframes rotate-hue {
+      to {
+        filter: hue-rotate(1turn);
+      }
+    }
+    
+    .section-button,
+    .section-button::after {
+      box-sizing: border-box;
+    }
+    
+    .section-button:active {
+      --border-width: 5px;
+    }
+    
+    details {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(184, 134, 11, 0.2);
+      transition: var(--transition);
+    }
+    
+    details:hover {
+      border-color: rgba(212, 167, 106, 0.5);
+    }
+    
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      color: #d4a76a;
+    }
+    
+    summary:hover {
+      color: #f8d568;
+    }
+    
+    summary::marker {
+      color: #d4a76a;
+    }
+    
+    ul {
+      margin: 16px 0 0 0;
+      padding: 0 0 0 20px;
+    }
+    
+    li {
+      margin: 10px 0;
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+    
+    li:hover {
+      color: #d4a76a;
+      transform: translateX(5px);
+    }
+    
+    code {
+      background: rgba(212, 167, 106, 0.1);
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: #d4a76a;
+      font-family: monospace;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    
+    code:hover {
+      background: rgba(212, 167, 106, 0.2);
+    }
+    
+    /* التذييل */
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(184, 134, 11, 0.2);
+      margin-top: 60px;
+      background: rgba(139, 69, 19, 0.05);
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .footer p {
+      margin: 10px 0;
+      color: #d4a76a;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      color: #d4a76a;
+      font-size: 20px;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      color: #f8d568;
+      transform: translateY(-3px);
+    }
+    
+    /* تأثيرات للصفحات */
+    .hidden {
+      display: none;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* تصميم متجاوب */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 12px;
+      }
+      
+      .hero-title {
+        font-size: 32px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .developer-card {
+        width: 240px;
+        height: 340px;
+      }
+      
+      .circle-loader {
+        width: 140px;
+        height: 140px;
+      }
+      
+      .specialization-header {
+        padding: 60px 20px 40px;
+      }
+      
+      .specialization-header h1 {
+        font-size: 28px;
+      }
+      
+      .back-btn {
+        top: 15px;
+        right: 15px;
+      }
+      
+      .content-card {
+        padding: 20px;
+      }
+      
+      .specialty-button {
+        padding: 0.5em 1.5em;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 28px;
+      }
+      
+      .hero p {
+        font-size: 14px;
+      }
+      
+      .circle-loader {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .circle-loader:before {
+        font-size: 30px;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>دليل التخصصات التقنية — أقسام ومطلوب لكل قسم</h1>
-    <p class="small">صفحة سريعة تعرض الأقسام الرئيسية ومهارات / معرفة تحتاجها لتتخصص فيها</p>
-  </header>  <main class="container">
-    <div class="grid">
-      <!-- Web Development -->
-      <section class="card">
-        <h2>1. تطوير الويب (Web Development)</h2>
-        <p class="small">أقسام داخل التخصص ومهارات مطلوبة</p>
-        <details>
-          <summary>أقسام</summary>
-          <ul>
-            <li><strong>Front-End</strong>: HTML, CSS, JavaScript, React / Vue / Angular</li>
-            <li><strong>Back-End</strong>: Node.js, Python (Django/Flask), PHP, Java (Spring)</li>
-            <li><strong>Full-Stack</strong>: الجمع بين الفرونت والباك، DevOps أساسي</li>
-          </ul>
-        </details>
-        <details>
-          <summary>المطلوب لتبدأ</summary>
-          <ul>
-            <li>إتقان <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code></li>
-            <li>فهم HTTP, APIs, Authentication</li>
-            <li>قواعد بيانات: MySQL, PostgreSQL, MongoDB</li>
-            <li>أدوات: git, npm, Webpack/Vite</li>
-          </ul>
-        </details>
-      </section><!-- Game Development -->
-  <section class="card">
-    <h2>2. تطوير الألعاب (Game Development)</h2>
-    <p class="small">بنايات الألعاب ثنائية وثلاثية الأبعاد، وموبايل.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>2D / 3D (Unity, Unreal, Godot)</li>
-        <li>Mobile Games (Unity, Cocos)</li>
-        <li>Game Design, Level Design, Audio</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>لغات: <code>C#</code> (Unity)، <code>C++</code> (Unreal)</li>
-        <li>محركات: Unity أو Unreal</li>
-        <li>مهارات نمذجة: Blender، أساسيات الرسوم والأنيميشن</li>
-      </ul>
-    </details>
-  </section>
+  <!-- الشريط العلوي -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-laptop-code"></i>
+      <span>ENG OMAR</span>
+    </div>
+  </nav>
 
-  <!-- App Development -->
-  <section class="card">
-    <h2>3. تطوير التطبيقات (App Development)</h2>
-    <p class="small">تطبيقات موبايل وسطح مكتب وCross-platform.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>Android (Kotlin/Java)</li>
-        <li>iOS (Swift)</li>
-        <li>Cross-Platform (Flutter, React Native)</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>معرفة لغة النظام (Kotlin/Swift) أو Flutter (Dart)</li>
-        <li>تصميم واجهة المستخدم UI/UX</li>
-        <li>التعامل مع قواعد بيانات محلية وRemote (SQLite, Firebase)</li>
-      </ul>
-    </details>
-  </section>
+  <!-- الصفحة الرئيسية -->
+  <div id="home-page">
+    <section class="hero">
+      <h1 class="hero-title">
+        <span>كن مطور محترف في تخصصات التكنولوجيا</span>
+      </h1>
+      <p>اكتشف عالم التكنولوجيا واختر تخصصك المستقبلي في مجال البرمجة والتطوير</p>
+    </section>
+    <div class="quoct">لتطوير المواقع والتطبيقات والألعاب وحمايتهم من الاختراق بخط احترافي</div>
 
-  <!-- Cyber Security -->
-  <section class="card">
-    <h2>4. الأمن السيبراني (Cyber Security)</h2>
-    <p class="small">حماية الأنظمة، اختبارات الاختراق، تحليل البرمجيات الخبيثة.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>Penetration Testing</li>
-        <li>Malware Analysis</li>
-        <li>Digital Forensics</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>نظام تشغيل: Linux، أدوات مثل Kali</li>
-        <li>شبكات: TCP/IP, DNS, HTTP</li>
-        <li>أدوات: Wireshark, Metasploit, Burp Suite</li>
-      </ul>
-    </details>
-  </section>
+    <div class="container">
+      <div class="grid">
+        <!-- التواصل مع المطور -->
+        <div class="specialty-circle fade-in">
+          <div class="developer-card" data-specialization="developer-contact">
+            <div class="developer-wave"></div>
+            <div class="developer-wave"></div>
+            <div class="developer-wave"></div>
+            
+            <div class="developer-info">
+              <i class="developer-icon fas fa-user-tie"></i>
+              <div class="developer-name">التواصل مع المطور</div>
+              <div class="developer-links">
+                <a href="https://chat.whatsapp.com/CRMbwAgcI1T6gO5e7JOGe5" class="developer-link" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://wa.me/201508874734" class="developer-link" target="_blank">
+                  <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://linktr.ee/OamrHamdi" class="developer-link" target="_blank">
+                  <i class="fas fa-link"></i>
+                </a>
+                <a href="https://t.me/programming2026" class="developer-link" target="_blank">
+                  <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://youtube.com/@omarhmady-1" class="developer-link" target="_blank">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://t.me/OamrHamdi" class="developer-link" target="_blank">
+                  <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://github.com/Oamrhamdi" class="developer-link" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <!-- Computer Science -->
-  <section class="card">
-    <h2>5. علوم الحاسب (Computer Science)</h2>
-    <p class="small">الأساس النظري: خوارزميات، نظرية الحوسبة، نظم تشغيل.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>خوارزميات وهياكل بيانات</li>
-        <li>نظم التشغيل وقواعد البيانات</li>
-        <li>نظرية الحوسبة والبرمجة المتقدمة</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>لغات: C, C++, Java, Python</li>
-        <li>رياضيات: جبر خطي، احتمالات، تحليل</li>
-        <li>فهم تعقيد الخوارزميات Big-O</li>
-      </ul>
-    </details>
-  </section>
+        <!-- باقي التخصصات -->
+        <!-- تطوير الويب -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader web-dev" data-specialization="web-development">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="web-development">تطوير الويب</button>
+        </div>
 
-  <!-- Information Systems -->
-  <section class="card">
-    <h2>6. نظم المعلومات (Information Systems)</h2>
-    <p class="small">تقاطع بين تقنية المعلومات وإدارة الأعمال.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>تحليل وتصميم النظم</li>
-        <li>إدارة قواعد البيانات وERP</li>
-        <li>تحليل الأعمال ومتطلبات المستخدم</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>SQL, Oracle, تصميم UML</li>
-        <li>المعرفة بإدارة مشاريع (Agile, Scrum)</li>
-        <li>فهم عمليات العمل وإدارة التغيير</li>
-      </ul>
-    </details>
-  </section>
+        <!-- تطوير الألعاب -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader game-dev" data-specialization="game-development">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="game-development">تطوير الألعاب</button>
+        </div>
 
-  <!-- AI -->
-  <section class="card">
-    <h2>7. الذكاء الاصطناعي (AI)</h2>
-    <p class="small">تعلم الآلة، الرؤية الحاسوبية، معالجة اللغة.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>Machine Learning, Deep Learning</li>
-        <li>Computer Vision, NLP</li>
-        <li>Reinforcement Learning</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>Python + TensorFlow / PyTorch</li>
-        <li>رياضيات: تفاضل، جبر خطي، إحصاء</li>
-        <li>مشاريع تطبيقية ومجموعات بيانات</li>
-      </ul>
-    </details>
-  </section>
+        <!-- تطوير التطبيقات -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader app-dev" data-specialization="app-development">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="app-development">تطوير التطبيقات</button>
+        </div>
 
-  <!-- Data Science -->
-  <section class="card">
-    <h2>8. علم البيانات (Data Science)</h2>
-    <p class="small">تحليل، هندسة، وتصوير البيانات.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>Data Analysis, Data Engineering</li>
-        <li>Data Visualization, Big Data</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>Python/R, Pandas, NumPy</li>
-        <li>SQL, Hadoop, Spark</li>
-        <li>مهارات عرض البيانات: Matplotlib, Plotly</li>
-      </ul>
-    </details>
-  </section>
+        <!-- الأمن السيبراني -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader cyber-security" data-specialization="cyber-security">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="cyber-security">الأمن السيبراني</button>
+        </div>
 
-  <!-- Computer Engineering -->
-  <section class="card">
-    <h2>9. هندسة الحاسب (Computer Engineering)</h2>
-    <p class="small">عتاد وبرمجيات مدمجة، FPGA، دوائر.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>تصميم العتاد (Digital/Analog)</li>
-        <li>Embedded Systems, Microcontrollers</li>
-        <li>FPGA، VHDL/Verilog</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>لغات: C, Assembly</li>
-        <li>إلكترونيات، دوائر رقمية</li>
-        <li>معرفة FPGA وARM</li>
-      </ul>
-    </details>
-  </section>
+        <!-- علوم الحاسب -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader computer-science" data-specialization="computer-science">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="computer-science">علوم الحاسب</button>
+        </div>
 
-  <!-- Network Security -->
-  <section class="card">
-    <h2>10. أمن الشبكات (Network Security)</h2>
-    <p class="small">حماية البنية التحتية للشبكة والسياسات الأمنية.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>Network Design, Firewalls</li>
-        <li>IDS/IPS, VPNs</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>CCNA / CCNP مفيد</li>
-        <li>فهم البروتوكولات: TCP/IP, BGP</li>
-        <li>معدات Cisco وLinux</li>
-      </ul>
-    </details>
-  </section>
+        <!-- نظم المعلومات -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader information-systems" data-specialization="information-systems">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="information-systems">نظم المعلومات</button>
+        </div>
 
-  <!-- Information Security -->
-  <section class="card">
-    <h2>11. أمن المعلومات (Information Security)</h2>
-    <p class="small">سياسات، تشفير، إدارة مخاطر والتوافق.</p>
-    <details>
-      <summary>أقسام</summary>
-      <ul>
-        <li>Data Protection, Identity & Access Management</li>
-        <li>Risk Management, Compliance (GDPR, ISO 27001)</li>
-      </ul>
-    </details>
-    <details>
-      <summary>المطلوب</summary>
-      <ul>
-        <li>معرفة التشفير Cryptography</li>
-        <li>سياسات الأمن وإدارة الحوادث</li>
-        <li>شهادات مثل CISSP مفيدة</li>
-      </ul>
-    </details>
-  </section>
+        <!-- الذكاء الاصطناعي -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader ai" data-specialization="ai">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="ai">الذكاء الاصطناعي</button>
+        </div>
 
-</div>
+        <!-- علم البيانات -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader data-science" data-specialization="data-science">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="data-science">علم البيانات</button>
+        </div>
 
-<div class="footer">
-  <div>حابب الملف جاهز للتعديل أو نسخة PDF؟ استخدم الأزرار أدناه.</div>
-  <div class="actions">
-    <button class="btn" onclick="copyHtml()">نسخ HTML</button>
-    <button class="btn" onclick="downloadFile()">تحميل ملف HTML</button>
+        <!-- هندسة الحاسب -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader computer-engineering" data-specialization="computer-engineering">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="computer-engineering">هندسة الحاسب</button>
+        </div>
+
+        <!-- أمن الشبكات -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader network-security" data-specialization="network-security">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="network-security">أمن الشبكات</button>
+        </div>
+
+        <!-- أمن المعلومات -->
+        <div class="specialty-circle fade-in">
+          <div class="circle-loader information-security" data-specialization="information-security">
+            <span></span>
+          </div>
+          <button class="specialty-button" data-specialization="information-security">أمن المعلومات</button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-  </main>  <script>
-    function copyHtml(){
-      const html = `<!DOCTYPE html>\n<html lang=\"ar\" dir=\"rtl\">...`;
-      navigator.clipboard?.writeText(document.documentElement.outerHTML).then(()=>alert('تم نسخ الصفحة إلى الحافظة'));
+  <!-- صفحات التخصصات (مخفية في البداية) -->
+  <div id="specialization-pages" class="hidden">
+    <!-- سيتم ملء هذه الصفحات ديناميكيًا باستخدام JavaScript -->
+  </div>
+
+  <!-- التذييل -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>جميع الحقوق محفوظة © 2023 ENG OMAR</p>
+      <p>لتطوير المواقع والتطبيقات والألعاب وحمايتهم من الاختراق</p>
+      <div class="social-links">
+        <a href="https://github.com/Oamrhamdi" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://t.me/OamrHamdi" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://youtube.com/@omarhmady-1" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/201508874734" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // بيانات التخصصات
+    const specializations = {
+      'developer-contact': {
+        title: 'التواصل مع المطور',
+        desc: 'تواصل مع المطور للحصول على استشارات أو مساعدة في مشاريعك',
+        sections: [
+          {
+            title: 'طرق التواصل',
+            content: `
+              <li><strong>واتساب:</strong> <a href="https://wa.me/201508874734" style="color: #d4a76a;">+201508874734</a></li>
+              <li><strong>تيليجرام:</strong> <a href="https://t.me/OamrHamdi" style="color: #d4a76a;">@OamrHamdi</a></li>
+              <li><strong>جروب التيليجرام:</strong> <a href="https://t.me/programming2026" style="color: #d4a76a;">Programming 2026</a></li>
+              <li><strong>يوتيوب:</strong> <a href="https://youtube.com/@omarhmady-1" style="color: #d4a76a;">Omar Hmady</a></li>
+              <li><strong>جيت هاب:</strong> <a href="https://github.com/Oamrhamdi" style="color: #d4a76a;">Oamrhamdi</a></li>
+              <li><strong>لينكتري:</strong> <a href="https://linktr.ee/OamrHamdi" style="color: #d4a76a;">جميع الروابط</a></li>
+            `
+          }
+        ]
+      },
+      'web-development': {
+        title: 'تطوير الويب (Web Development)',
+        desc: 'بناء وتصميم مواقع وتطبيقات الويب',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>إتقان <code>HTML</code>, <code>CSS</code>, <code>JavaScript</code></li>
+              <li>فهم HTTP, APIs, Authentication</li>
+              <li>قواعد بيانات: MySQL, PostgreSQL, MongoDB</li>
+              <li>أدوات: git, npm, Webpack/Vite</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>Front-End</strong>: HTML, CSS, JavaScript, React / Vue / Angular</li>
+              <li><strong>Back-End</strong>: Node.js, Python (Django/Flask), PHP, Java (Spring)</li>
+              <li><strong>Full-Stack</strong>: الجمع بين الفرونت والباك، DevOps أساسي</li>
+            `
+          }
+        ]
+      },
+      'game-development': {
+        title: 'تطوير الألعاب (Game Development)',
+        desc: 'تصميم وتطوير ألعاب الفيديو لمختلف المنصات',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>لغات البرمجة: <code>C++</code>, <code>C#</code></li>
+              <li>محركات الألعاب: Unity, Unreal Engine</li>
+              <li>تصميم الرسومات والأنيميشن</li>
+              <li>تصميم الصوت والموسيقى</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>ألعاب الويب:</strong> استخدام HTML5, JavaScript</li>
+              <li><strong>ألعاب الموبايل:</strong> تطوير لأندرويد و iOS</li>
+              <li><strong>ألعاب الكمبيوتر:</strong> تطوير لأجهزة PC والكونسول</li>
+              <li><strong>الواقع الافتراضي والمعزز:</strong> VR/AR Development</li>
+            `
+          }
+        ]
+      },
+      'app-development': {
+        title: 'تطوير التطبيقات (App Development)',
+        desc: 'تطوير تطبيقات الموبايل والكمبيوتر',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>تطوير أندرويد: <code>Java</code>, <code>Kotlin</code></li>
+              <li>تطوير iOS: <code>Swift</code>, Objective-C</li>
+              <li>التطوير متعدد المنصات: Flutter, React Native</li>
+              <li>واجهات المستخدم وتجربة المستخدم (UI/UX)</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>تطبيقات أندرويد:</strong> استخدام Android Studio</li>
+              <li><strong>تطبيقات iOS:</strong> استخدام Xcode</li>
+              <li><strong>تطبيقات الهجين:</strong> استخدام إطارات عمل مثل Ionic</li>
+              <li><strong>تطبيقات سطح المكتب:</strong> استخدام Electron, JavaFX</li>
+            `
+          }
+        ]
+      },
+      'cyber-security': {
+        title: 'الأمن السيبراني (Cyber Security)',
+        desc: 'حماية الأنظمة والشبكات من الهجمات الإلكترونية',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>أمن الشبكات والأنظمة</li>
+              <li>اختبار الاختراق (Penetration Testing)</li>
+              <li>تحقيق الأدلة الرقمية (Digital Forensics)</li>
+              <li>إدارة الثغرات الأمنية</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>أمن الشبكات:</strong> حماية البنية التحتية للشبكات</li>
+              <li><strong>أمن التطبيقات:</strong> تأمين التطبيقات من الثغرات</li>
+              <li><strong>الأمن السحابي:</strong> تأمين البيئات السحابية</li>
+              <li><strong>الاستجابة للحوادث:</strong> التعامل مع الهجمات الإلكترونية</li>
+            `
+          }
+        ]
+      },
+      // ... يمكنك إضافة بقية التخصصات بنفس النمط
+    };
+
+    // عناصر DOM
+    const homePage = document.getElementById('home-page');
+    const specializationPages = document.getElementById('specialization-pages');
+    const specialtyButtons = document.querySelectorAll('.specialty-button');
+    const circleLoaders = document.querySelectorAll('.circle-loader');
+    const developerCard = document.querySelector('.developer-card');
+
+    // عرض صفحة التخصص
+    function showSpecializationPage(specializationId) {
+      const spec = specializations[specializationId];
+      if (!spec) return;
+      
+      homePage.classList.add('hidden');
+      specializationPages.classList.remove('hidden');
+      
+      specializationPages.innerHTML = `
+        <a href="#" class="back-btn" id="back-button">
+          <i class="fas fa-arrow-right"></i>
+          العودة إلى الرئيسية
+        </a>
+        
+        <section class="specialization-header">
+          <h1>${spec.title}</h1>
+          <p>${spec.desc}</p>
+        </section>
+        
+        <div class="container">
+          <div class="content-grid">
+            ${spec.sections.map(section => `
+              <div class="content-card fade-in">
+                <button class="section-button">${section.title}</button>
+                <ul>${section.content}</ul>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+      
+      // إضافة مستمع حدث للزر الرجوع
+      document.getElementById('back-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        showHomePage();
+      });
     }
-    function downloadFile(){
-      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = 'tech-specializations.html'; a.click(); URL.revokeObjectURL(url);
+
+    // عرض الصفحة الرئيسية
+    function showHomePage() {
+      specializationPages.classList.add('hidden');
+      homePage.classList.remove('hidden');
     }
-  </script></body>
-</html>
+
+    // إضافة مستمعي الأحداث لأزرار التخصصات
+    specialtyButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const specializationId = this.getAttribute('data-specialization');
+        showSpecializationPage(specializationId);
+      });
+    });
+
+    // إضافة مستمعي الأحداث للدوائر
+    circleLoaders.forEach(circle => {
+      circle.addEventListener('click', function() {
+        const specializationId = this.getAttribute('data-specialization');
+        showSpecializationPage(specializationId);
+      });
+    });
+
+    // إضافة مستمع حدث لبطاقة المطور
+    if (developerCard) {
+      developerCard.addEventListener('click', function() {
+        showSpecializationPage('developer-contact');
+      });
+    }
+
+    // إضافة تأثيرات عند التمرير
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // مراقبة العناصر لإضافة تأثيرات الظهور
+    document.querySelectorAll('.specialty-circle').forEach(circle => {
+      circle.style.opacity = 0;
+      circle.style.transform = 'translateY(20px)';
+      circle.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(circle);
+    });
+  </script>
+</body>
+    </html>
