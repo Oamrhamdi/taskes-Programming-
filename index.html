@@ -752,6 +752,77 @@
         font-size: 30px;
       }
     }
+
+    /* تصميم جديد للمسار التعليمي */
+    .learning-path {
+      background: rgba(139, 69, 19, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 30px;
+      border: 1px solid rgba(184, 134, 11, 0.2);
+    }
+    
+    .learning-path h3 {
+      color: #d4a76a;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    
+    .path-item {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+    
+    .path-number {
+      background: #d4a76a;
+      color: #0f1724;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-left: 15px;
+      flex-shrink: 0;
+    }
+    
+    .path-content {
+      flex: 1;
+    }
+    
+    .path-content h4 {
+      color: #f8d568;
+      margin-bottom: 8px;
+    }
+    
+    .path-content ul {
+      margin-top: 8px;
+    }
+    
+    .resources {
+      margin-top: 30px;
+    }
+    
+    .resources h4 {
+      color: #d4a76a;
+      margin-bottom: 15px;
+    }
+    
+    .resource-link {
+      display: block;
+      color: #f8d568;
+      margin-bottom: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .resource-link:hover {
+      color: #ffd166;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -963,6 +1034,57 @@
               <li><strong>Back-End</strong>: Node.js, Python (Django/Flask), PHP, Java (Spring)</li>
               <li><strong>Full-Stack</strong>: الجمع بين الفرونت والباك، DevOps أساسي</li>
             `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لتطوير الويب</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات البرمجة</h4>
+                    <ul>
+                      <li>HTML & CSS</li>
+                      <li>JavaScript الأساسي</li>
+                      <li>مبادئ تصميم الويب</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التطوير المتقدم</h4>
+                    <ul>
+                      <li>إطار عمل Front-End (React, Vue, Angular)</li>
+                      <li>إطار عمل Back-End (Node.js, Django, Laravel)</li>
+                      <li>قواعد البيانات (SQL, NoSQL)</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>مواد متقدمة</h4>
+                    <ul>
+                      <li>أمن تطبيقات الويب</li>
+                      <li>تحسين أداء المواقع</li>
+                      <li>نشر التطبيقات وإدارتها</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.freecodecamp.org/" class="resource-link" target="_blank">FreeCodeCamp</a>
+                  <a href="https://www.theodinproject.com/" class="resource-link" target="_blank">The Odin Project</a>
+                  <a href="https://developer.mozilla.org/en-US/" class="resource-link" target="_blank">MDN Web Docs</a>
+                </div>
+              </div>
+            `
           }
         ]
       },
@@ -986,6 +1108,57 @@
               <li><strong>ألعاب الموبايل:</strong> تطوير لأندرويد و iOS</li>
               <li><strong>ألعاب الكمبيوتر:</strong> تطوير لأجهزة PC والكونسول</li>
               <li><strong>الواقع الافتراضي والمعزز:</strong> VR/AR Development</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لتطوير الألعاب</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات البرمجة</h4>
+                    <ul>
+                      <li>لغة C# أو C++</li>
+                      <li>مبادئ الرياضيات والفيزياء للألعاب</li>
+                      <li>مفاهيم تطوير الألعاب الأساسية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>محركات الألعاب</h4>
+                    <ul>
+                      <li>Unity Engine</li>
+                      <li>Unreal Engine</li>
+                      <li>Godot Engine</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>مواد متقدمة</h4>
+                    <ul>
+                      <li>الواقع الافتراضي والمعزز</li>
+                      <li>الذكاء الاصطناعي للألعاب</li>
+                      <li>تحسين أداء الألعاب</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://learn.unity.com/" class="resource-link" target="_blank">Unity Learn</a>
+                  <a href="https://www.unrealengine.com/en-US/learn" class="resource-link" target="_blank">Unreal Engine Learning</a>
+                  <a href="https://www.gamedev.net/" class="resource-link" target="_blank">GameDev.net</a>
+                </div>
+              </div>
             `
           }
         ]
@@ -1011,6 +1184,57 @@
               <li><strong>تطبيقات الهجين:</strong> استخدام إطارات عمل مثل Ionic</li>
               <li><strong>تطبيقات سطح المكتب:</strong> استخدام Electron, JavaFX</li>
             `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لتطوير التطبيقات</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات البرمجة</h4>
+                    <ul>
+                      <li>لغة Java أو Kotlin للأندرويد</li>
+                      <li>لغة Swift أو Objective-C لـ iOS</li>
+                      <li>مبادئ تصميم واجهات المستخدم</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التطوير المتقدم</h4>
+                    <ul>
+                      <li>إطارات عمل متعددة المنصات (Flutter, React Native)</li>
+                      <li>قواعد البيانات المحلية (SQLite, Realm)</li>
+                      <li>واجهات برمجة التطبيقات (APIs)</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>مواد متقدمة</h4>
+                    <ul>
+                      <li>أداء التطبيقات وتحسينها</li>
+                      <li>الأمان وحماية البيانات</li>
+                      <li>نشر التطبيقات في المتاجر</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://developer.android.com/" class="resource-link" target="_blank">Android Developers</a>
+                  <a href="https://developer.apple.com/" class="resource-link" target="_blank">Apple Developer</a>
+                  <a href="https://flutter.dev/" class="resource-link" target="_blank">Flutter</a>
+                </div>
+              </div>
+            `
           }
         ]
       },
@@ -1035,10 +1259,585 @@
               <li><strong>الأمن السحابي:</strong> تأمين البيئات السحابية</li>
               <li><strong>الاستجابة للحوادث:</strong> التعامل مع الهجمات الإلكترونية</li>
             `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي للأمن السيبراني</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات الأمن</h4>
+                    <ul>
+                      <li>مبادئ الأمن السيبراني</li>
+                      <li>أمن الشبكات الأساسي</li>
+                      <li>أنظمة التشغيل (Linux, Windows)</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التخصصات الأمنية</h4>
+                    <ul>
+                      <li>اختبار الاختراق والأخلاقي</li>
+                      <li>تحقيق الأدلة الرقمية</li>
+                      <li>أمن التطبيقات والويب</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>مواد متقدمة</h4>
+                    <ul>
+                      <li>أمن السحابة والبنية التحتية</li>
+                      <li>الاستجابة للحوادث الأمنية</li>
+                      <li>إدارة المخاطر الأمنية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.cybrary.it/" class="resource-link" target="_blank">Cybrary</a>
+                  <a href="https://www.sans.org/" class="resource-link" target="_blank">SANS Institute</a>
+                  <a href="https://www.hackthebox.com/" class="resource-link" target="_blank">Hack The Box</a>
+                </div>
+              </div>
+            `
           }
         ]
       },
-      // ... يمكنك إضافة بقية التخصصات بنفس النمط
+      'computer-science': {
+        title: 'علوم الحاسب (Computer Science)',
+        desc: 'دراسة الأسس النظرية للمعلومات والحساب وتطبيقاتها',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>الخوارزميات وهياكل البيانات</li>
+              <li>البرمجة بلغات متعددة: <code>Python</code>, <code>Java</code>, <code>C++</code></li>
+              <li>قواعد البيانات ونظم إدارتها</li>
+              <li>هندسة البرمجيات وأساليب التطوير</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>النظرية الحسابية:</strong> دراسة الخوارزميات والتعقيد</li>
+              <li><strong>الذكاء الاصطناعي:</strong> تطوير أنظمة ذكية</li>
+              <li><strong>الرسومات الحاسوبية:</strong> معالجة الصور والرسم بالحاسب</li>
+              <li><strong>التفاعل الإنسانى الحاسوبي:</strong> تصميم واجهات المستخدم</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لعلوم الحاسب</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات البرمجة</h4>
+                    <ul>
+                      <li>مقدمة في البرمجة (Python, Java)</li>
+                      <li>هياكل البيانات الأساسية</li>
+                      <li>الخوارزميات البسيطة</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>المواد الأساسية</h4>
+                    <ul>
+                      <li>هياكل البيانات المتقدمة</li>
+                      <li>خوارزميات وتحليلها</li>
+                      <li>قواعد البيانات ونظم إدارتها</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات</h4>
+                    <ul>
+                      <li>الذكاء الاصطناعي وتعلم الآلة</li>
+                      <li>الرسومات الحاسوبية</li>
+                      <li>أمن الحاسوب والشبكات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.coursera.org/" class="resource-link" target="_blank">Coursera</a>
+                  <a href="https://www.edx.org/" class="resource-link" target="_blank">edX</a>
+                  <a href="https://ocw.mit.edu/" class="resource-link" target="_blank">MIT OpenCourseWare</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      'information-systems': {
+        title: 'نظم المعلومات (Information Systems)',
+        desc: 'دراسة كيفية دمج التكنولوجيا مع احتياجات الأعمال',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>تحليل وتصميم النظم</li>
+              <li>إدارة قواعد البيانات</li>
+              <li>إدارة مشاريع تكنولوجيا المعلومات</li>
+              <li>أمن المعلومات وحماية البيانات</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>نظم معلومات الأعمال:</strong> دعم العمليات التجارية</li>
+              <li><strong>تحليل النظم:</strong> دراسة وتحسين النظم القائمة</li>
+              <li><strong>إدارة مشاريع تكنولوجيا المعلومات:</strong> تخطيط وتنفيذ المشاريع</li>
+              <li><strong>الاستشارات التكنولوجية:</strong> تقديم الاستشارات للشركات</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لنظم المعلومات</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات النظم</h4>
+                    <ul>
+                      <li>مقدمة في نظم المعلومات</li>
+                      <li>أساسيات قواعد البيانات</li>
+                      <li>مبادئ إدارة الأعمال</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التطبيقات العملية</h4>
+                    <ul>
+                      <li>تحليل وتصميم النظم</li>
+                      <li>إدارة مشاريع تكنولوجيا المعلومات</li>
+                      <li>تكامل النظم</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات المتقدمة</h4>
+                    <ul>
+                      <li>الذكاء الاصطناعي في الأعمال</li>
+                      <li>تحليل البيانات الضخمة</li>
+                      <li>أمن نظم المعلومات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.isaca.org/" class="resource-link" target="_blank">ISACA</a>
+                  <a href="https://www.iiba.org/" class="resource-link" target="_blank">IIBA</a>
+                  <a href="https://www.pmi.org/" class="resource-link" target="_blank">Project Management Institute</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      'ai': {
+        title: 'الذكاء الاصطناعي (Artificial Intelligence)',
+        desc: 'تطوير أنظمة ذكية قادرة على محاكاة الذكاء البشري',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>تعلم الآلة (Machine Learning)</li>
+              <li>الشبكات العصبية (Neural Networks)</li>
+              <li>معالجة اللغة الطبيعية (NLP)</li>
+              <li>الرؤية بالحاسب (Computer Vision)</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>تعلم الآلة:</strong> تطوير أنظمة تتعلم من البيانات</li>
+              <li><strong>الروبوتات:</strong> تصميم وتطوير الروبوتات الذكية</li>
+              <li><strong>الأنظمة الخبيرة:</strong> أنظمة تحاكي خبرة البشر</li>
+              <li><strong>التعلم العميق:</strong> استخدام الشبكات العصبية العميقة</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي للذكاء الاصطناعي</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات الذكاء الاصطناعي</h4>
+                    <ul>
+                      <li>الرياضيات للإحصاء والجبر الخطي</li>
+                      <li>أساسيات Python للذكاء الاصطناعي</li>
+                      <li>مقدمة في تعلم الآلة</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التقنيات الأساسية</h4>
+                    <ul>
+                      <li>خوارزميات تعلم الآلة</li>
+                      <li>الشبكات العصبية</li>
+                      <li>معالجة اللغة الطبيعية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات المتقدمة</h4>
+                    <ul>
+                      <li>التعلم العميق (Deep Learning)</li>
+                      <li>الرؤية بالحاسب</li>
+                      <li>أنظمة التوصية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.coursera.org/specializations/machine-learning" class="resource-link" target="_blank">Machine Learning Specialization</a>
+                  <a href="https://www.fast.ai/" class="resource-link" target="_blank">fast.ai</a>
+                  <a href="https://www.kaggle.com/learn" class="resource-link" target="_blank">Kaggle Learn</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      'data-science': {
+        title: 'علم البيانات (Data Science)',
+        desc: 'استخلاص المعرفة وال insights من البيانات',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>الإحصاء والرياضيات</li>
+              <li>برمجة <code>Python</code> و <code>R</code></li>
+              <li>تعلم الآلة والتنبؤ</li>
+              <li>تصور البيانات (Data Visualization)</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>تحليل البيانات:</strong> استكشاف البيانات واستخلاص النتائج</li>
+              <li><strong>التعلم الآلي:</strong> بناء نماذج تنبؤية من البيانات</li>
+              <li><strong>البيانات الضخمة:</strong> معالجة كميات هائلة من البيانات</li>
+              <li><strong>تحليل الأعمال:</strong> استخدام البيانات لتحسين الأداء</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لعلم البيانات</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات علم البيانات</h4>
+                    <ul>
+                      <li>الإحصاء والاحتمالات</li>
+                      <li>برمجة Python للبيانات</li>
+                      <li>استكشاف البيانات وتحليلها</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التقنيات الأساسية</h4>
+                    <ul>
+                      <li>تعلم الآلة للبيانات</li>
+                      <li>قواعد البيانات واستعلامات SQL</li>
+                      <li>تصور البيانات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات المتقدمة</h4>
+                    <ul>
+                      <li>البيانات الضخمة (Big Data)</li>
+                      <li>التعلم العميق للبيانات</li>
+                      <li>تحليل السلاسل الزمنية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.datacamp.com/" class="resource-link" target="_blank">DataCamp</a>
+                  <a href="https://www.kaggle.com/learn" class="resource-link" target="_blank">Kaggle Learn</a>
+                  <a href="https://www.coursera.org/specializations/jhu-data-science" class="resource-link" target="_blank">Data Science Specialization</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      'computer-engineering': {
+        title: 'هندسة الحاسب (Computer Engineering)',
+        desc: 'تصميم وتطوير المكونات المادية والبرمجية للحواسيب',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>هندسة الكهرباء والإلكترونيات</li>
+              <li>هندسة البرمجيات</li>
+              <li>هندسة المعالجات والأنظمة المدمجة</li>
+              <li>هندسة الشبكات</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>هندسة Hardware:</strong> تصميم المكونات المادية</li>
+              <li><strong>الأنظمة المدمجة:</strong> تطوير أنظمة مدمجة مثل IoT</li>
+              <li><strong>هندسة البرمجيات المنخفضة المستوى:</strong> برمجة قريبة من العتاد</li>
+              <li><strong>هندسة الشبكات:</strong> تصميم وتنفيذ شبكات الحاسب</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لهندسة الحاسب</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات الهندسة</h4>
+                    <ul>
+                      <li>دوائر كهربائية وإلكترونية</li>
+                      <li>برمجة أساسية (C, C++)</li>
+                      <li>رياضيات هندسية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التخصصات الأساسية</h4>
+                    <ul>
+                      <li>هندسة المعالجات والأنظمة المدمجة</li>
+                      <li>هندسة البرمجيات المنخفضة المستوى</li>
+                      <li>هندسة الشبكات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات المتقدمة</h4>
+                    <ul>
+                      <li>أنظمة IoT والأنظمة الذكية</li>
+                      <li>هندسة الأمن السيبراني</li>
+                      <li>هندسة الروبوتات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.arduino.cc/" class="resource-link" target="_blank">Arduino</a>
+                  <a href="https://www.raspberrypi.org/" class="resource-link" target="_blank">Raspberry Pi</a>
+                  <a href="https://www.coursera.org/specializations/embedded-systems" class="resource-link" target="_blank">Embedded Systems Specialization</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      'network-security': {
+        title: 'أمن الشبكات (Network Security)',
+        desc: 'حماية البنية التحتية للشبكات من التهديدات الإلكترونية',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>أمن أنظمة التشغيل</li>
+              <li>جدران الحماية (Firewalls)</li>
+              <li>أنظمة كشف ومنع التسلل (IDS/IPS)</li>
+              <li>الشبكات الخاصة الافتراضية (VPN)</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>أمن البنية التحتية:</strong> حماية الخوادم والأجهزة</li>
+              <li><strong>أمن الاتصالات:</strong> تأمين قنوات الاتصال</li>
+              <li><strong>إدارة الهوية والوصول:</strong> التحكم في صلاحيات المستخدمين</li>
+              <li><strong>المراقبة الأمنية:</strong> مراقبة الشبكة لاكتشاف التهديدات</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لأمن الشبكات</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات الشبكات</h4>
+                    <ul>
+                      <li>مبادئ الشبكات (TCP/IP, OSI Model)</li>
+                      <li>أمن الشبكات الأساسي</li>
+                      <li>أنظمة التشغيل للشبكات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التقنيات الأمنية</h4>
+                    <ul>
+                      <li>جدران الحماية وأنظمة كشف التسلل</li>
+                      <li>الشبكات الخاصة الافتراضية</li>
+                      <li>إدارة الهوية والوصول</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات المتقدمة</h4>
+                    <ul>
+                      <li>أمن الشبكات اللاسلكية</li>
+                      <li>أمن السحابة والشبكات الافتراضية</li>
+                      <li>الاستجابة لحوادث الشبكات</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/security/ccna-security.html" class="resource-link" target="_blank">Cisco CCNA Security</a>
+                  <a href="https://www.comptia.org/certifications/security" class="resource-link" target="_blank">CompTIA Security+</a>
+                  <a href="https://www.sans.org/cyber-security-courses/" class="resource-link" target="_blank">SANS Security Courses</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      'information-security': {
+        title: 'أمن المعلومات (Information Security)',
+        desc: 'حماية المعلومات من الوصول غير المصرح به أو التعديل',
+        sections: [
+          {
+            title: 'المهارات الأساسية',
+            content: `
+              <li>التشفير (Cryptography)</li>
+              <li>إدارة المخاطر الأمنية</li>
+              <li>الامتثال والمعايير الأمنية</li>
+              <li>الاستجابة للحوادث الأمنية</li>
+            `
+          },
+          {
+            title: 'المجالات',
+            content: `
+              <li><strong>أمن التطبيقات:</strong> حماية التطبيقات من الثغرات</li>
+              <li><strong>الأمن السحابي:</strong> تأمين البيانات في البيئات السحابية</li>
+              <li><strong>التشفير:</strong> تطوير أنظمة التشفير وفك التشفير</li>
+              <li><strong>التوعية الأمنية:</strong> تدريب المستخدمين على الممارسات الآمنة</li>
+            `
+          },
+          {
+            title: 'المسار التعليمي',
+            content: `
+              <div class="learning-path">
+                <h3>المسار التعليمي لأمن المعلومات</h3>
+                
+                <div class="path-item">
+                  <div class="path-number">1</div>
+                  <div class="path-content">
+                    <h4>أساسيات أمن المعلومات</h4>
+                    <ul>
+                      <li>مبادئ أمن المعلومات</li>
+                      <li>التشفير الأساسي</li>
+                      <li>إدارة المخاطر الأمنية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">2</div>
+                  <div class="path-content">
+                    <h4>التقنيات الأمنية</h4>
+                    <ul>
+                      <li>أمن التطبيقات والويب</li>
+                      <li>أمن قواعد البيانات</li>
+                      <li>الامتثال والمعايير الأمنية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="path-item">
+                  <div class="path-number">3</div>
+                  <div class="path-content">
+                    <h4>التخصصات المتقدمة</h4>
+                    <ul>
+                      <li>أمن السحابة والبيانات الضخمة</li>
+                      <li>التشفير المتقدم</li>
+                      <li>الاستجابة للحوادث الأمنية</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="resources">
+                  <h4>موارد مفيدة:</h4>
+                  <a href="https://www.isaca.org/credentialing/cism" class="resource-link" target="_blank">CISM Certification</a>
+                  <a href="https://www.isc2.org/Certifications/CISSP" class="resource-link" target="_blank">CISSP Certification</a>
+                  <a href="https://www.sans.org/cyber-security-courses/" class="resource-link" target="_blank">SANS Security Courses</a>
+                </div>
+              </div>
+            `
+          }
+        ]
+      }
     };
 
     // عناصر DOM
@@ -1072,7 +1871,7 @@
             ${spec.sections.map(section => `
               <div class="content-card fade-in">
                 <button class="section-button">${section.title}</button>
-                <ul>${section.content}</ul>
+                <div>${section.content}</div>
               </div>
             `).join('')}
           </div>
@@ -1139,4 +1938,4 @@
     });
   </script>
 </body>
-    </html>
+  </html>
